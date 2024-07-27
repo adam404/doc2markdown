@@ -7,11 +7,11 @@ setup(
     name="doc2md",
     version="0.1.0",
     author="Your Name",
-    author_email="your.email@example.com",
+    author_email="me@adamscott.info",
     description="A tool to convert various document formats to Markdown",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/doc2md",
+    url="https://github.com/adam404/doc2md",
     packages=find_packages(),
     install_requires=[
         "PyPDF2",
