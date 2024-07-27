@@ -1,73 +1,25 @@
-# doc2md
+# 📄 doc2md
 
 `doc2md` is a Python command-line tool that converts various document formats (PDF, PPTX, DOCX) to Markdown. It processes files in a given directory and its subdirectories, maintaining the original folder structure in the output.
 
-## Features
+## ✨ Features
 
-- Converts PDF, PPTX, and DOCX files to Markdown format
-- Preserves folder structure from input to output
-- Command-line interface for easy use and integration with other tools
-- Verbose mode for detailed processing information
+- 📑 Converts PDF, PPTX, and DOCX files to Markdown format
+- 🗂️ Preserves folder structure from input to output
+- 💻 Command-line interface for easy use and integration with other tools
+- 🔍 Verbose mode for detailed processing information
 
-## Installation
-
-To install `doc2md`, run the following command:
-
-```
-# doc2md
-
-`doc2md` is a Python command-line tool that converts various document formats (PDF, PPTX, DOCX) to Markdown. It processes files in a given directory and its subdirectories, maintaining the original folder structure in the output.
-
-## Features
-
-- Converts PDF, PPTX, and DOCX files to Markdown format
-- Preserves folder structure from input to output
-- Command-line interface for easy use and integration with other tools
-- Verbose mode for detailed processing information
-
-## Installation
-
-To install `doc2md`, run the following command:# doc2md
-
-`doc2md` is a Python command-line tool that converts various document formats (PDF, PPTX, DOCX) to Markdown. It processes files in a given directory and its subdirectories, maintaining the original folder structure in the output.
-
-## Features
-
-- Converts PDF, PPTX, and DOCX files to Markdown format
-- Preserves folder structure from input to output
-- Command-line interface for easy use and integration with other tools
-- Verbose mode for detailed processing information
-
-## Installation
-
-To install `doc2md`, run the following command:
-
-```bash
-
-# doc2md
-
-`doc2md` is a Python command-line tool that converts various document formats (PDF, PPTX, DOCX) to Markdown. It processes files in a given directory and its subdirectories, maintaining the original folder structure in the output.
-
-## Features
-
-- Converts PDF, PPTX, and DOCX files to Markdown format
-- Preserves folder structure from input to output
-- Command-line interface for easy use and integration with other tools
-- Verbose mode for detailed processing information
-
-## Installation
+## ⚙️ Installation
 
 To install `doc2md`, run the following command:
 
 ```bash
 pip install doc2md
-
 ```
 
 This will install `doc2md` along with its dependencies.
 
-## Usage
-
+## 🚀 Usage
 
 Basic usage:
 
@@ -87,7 +39,7 @@ For help and more options:
 doc2md --help
 ```
 
-## Requirements
+## 🛠️ Requirements
 
 - Python 3.6+
 - PyPDF2
@@ -96,15 +48,14 @@ doc2md --help
 
 These dependencies will be automatically installed when you install `doc2md` using pip.
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License.
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
-This tool was inspired by the need for easy conversion of various document formats to Markdown for use with Large Language Models and other text process
-
+This tool was inspired by the need for easy conversion of various document formats to Markdown for use with Large Language Models and other text processing applications.
