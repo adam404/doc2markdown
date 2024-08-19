@@ -48,6 +48,24 @@ doc2md --help
 
 These dependencies will be automatically installed when you install `doc2md` using pip.
 
+## 🚀 Future Improvements
+
+We're constantly working to improve doc2md. Here are some features and enhancements we're considering for future releases:
+
+### TODO:
+
+- [ ] Implement parallel processing for faster conversion of multiple files
+- [ ] Add a progress bar for large batches of file conversions
+- [ ] Create a plugin system for easy addition of new file format converters
+- [ ] Implement comprehensive unit tests for each converter function
+- [ ] Add logging mechanism for better debugging and user feedback
+- [ ] Implement input sanitization for enhanced security
+- [ ] Add type hints throughout the codebase for improved readability and maintainability
+- [ ] Create a CONTRIBUTING.md file with guidelines for contributors
+
+We welcome contributions from the community to help implement these features and improve doc2md. If you're interested in working on any of these tasks, please check our issues page or submit a pull request.
+
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
