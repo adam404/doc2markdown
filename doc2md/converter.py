@@ -63,11 +63,31 @@ def process_file_to_markdown(file_path, output_dir):
     
     print(f"Markdown file created: {output_path}")
 
+
+def process_file_parallel(file_path, input_dir, output_dir):
+    try:
+        process_file_to_markdown(file_path, output_dir)
+        return f"Successfully processed: {file_path}"
+    except Exception as e:
+        return f"Error processing {file_path}: {str(e)}"
+
 def process_folder(input_dir, output_dir):
+    files_to_process = []
     for root, _, files in os.walk(input_dir):
         for file in files:
             file_path = os.path.join(root, file)
-            process_file_to_markdown(file_path, output_dir)
+            files_to_process.append(file_path)
+
+    num_cores = multiprocessing.cpu_count()
+    with ProcessPoolExecutor(max_workers=num_cores) as executor:
+        futures = [executor.submit(process_file_parallel, file_path, input_dir, output_dir) 
+                   for file_path in files_to_process]
+        
+        for future in as_completed(futures):
+            result = future.result()
+            if args.verbose:
+                print(result)
+
 
 def main():
     parser = argparse.ArgumentParser(

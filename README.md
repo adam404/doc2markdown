@@ -54,7 +54,7 @@ We're constantly working to improve doc2md. Here are some features and enhanceme
 
 ### TODO:
 
-- [ ] Implement parallel processing for faster conversion of multiple files
+- [X] Implement parallel processing for faster conversion of multiple files
 - [ ] Add a progress bar for large batches of file conversions
 - [ ] Create a plugin system for easy addition of new file format converters
 - [ ] Implement comprehensive unit tests for each converter function
