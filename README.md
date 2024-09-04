@@ -65,6 +65,16 @@ We're constantly working to improve doc2md. Here are some features and enhanceme
 
 We welcome contributions from the community to help implement these features and improve doc2md. If you're interested in working on any of these tasks, please check our issues page or submit a pull request.
 
+## 📝 Changelog
+
+### [0.1.1] 
+- Added File as well as folder support
+- Improved the CLI messaging
+
+### [0.1.0] 
+- Initial release
+- Basic functionality to convert PDF, PPTX, and DOCX files to Markdown
+- Command-line interface with verbose mode option
 
 ## 🤝 Contributing
 
@@ -74,6 +84,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgements
+## 🙏 Acknowledgements 
 
 This tool was inspired by the need for easy conversion of various document formats to Markdown for use with Large Language Models and other text processing applications.
