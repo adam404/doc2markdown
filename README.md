@@ -62,7 +62,7 @@ We're constantly working to improve doc2markdown. Here are some features and enh
 - [ ] Add a progress bar for large batches of file conversions
 - [ ] Create a plugin system for easy addition of new file format converters
 - [ ] Implement comprehensive unit tests for each converter function
-- [ ] Add logging mechanism for better debugging and user feedback
+- [X] Add logging mechanism for better debugging and user feedback
 - [ ] Implement input sanitization for enhanced security
 - [ ] Add type hints throughout the codebase for improved readability and maintainability
 - [ ] Create a CONTRIBUTING.md file with guidelines for contributors
