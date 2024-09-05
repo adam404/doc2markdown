@@ -2,7 +2,7 @@ import unittest
 import os
 import tempfile
 from unittest.mock import patch, mock_open, Mock
-from doc2md.converter import (
+from doc2markdown.converter import (
     extract_pdf_to_markdown,
     extract_pptx_to_markdown,
     extract_docx_to_markdown,
@@ -12,7 +12,7 @@ from doc2md.converter import (
 )
 
 class TestConverter(unittest.TestCase):
-    @patch('doc2md.converter.PdfReader')
+    @patch('doc2markdown.converter.PdfReader')
     def test_extract_pdf_to_markdown(self, mock_pdf_reader):
         mock_pdf = Mock()
         mock_pdf.pages = [
@@ -26,7 +26,7 @@ class TestConverter(unittest.TestCase):
         self.assertEqual(result, expected)
         mock_pdf_reader.assert_called_once_with('test.pdf')
 
-    @patch('doc2md.converter.Presentation', autospec=True)
+    @patch('doc2markdown.converter.Presentation', autospec=True)
     def test_extract_pptx_to_markdown(self, MockPresentation):
         mock_prs = MockPresentation.return_value
         mock_slide1 = Mock()
@@ -40,7 +40,7 @@ class TestConverter(unittest.TestCase):
         self.assertEqual(result, expected)
         MockPresentation.assert_called_once_with('test.pptx')
 
-    @patch('doc2md.converter.Document')
+    @patch('doc2markdown.converter.Document')
     def test_extract_docx_to_markdown(self, mock_document):
         # Set up your mock document
         mock_doc = Mock()
@@ -63,9 +63,9 @@ class TestConverter(unittest.TestCase):
         expected = "This is a test\n\nwith extra spaces\n\nand newlines"
         self.assertEqual(clean_markdown(dirty_markdown), expected)
 
-    @patch('doc2md.converter.extract_pdf_to_markdown')
-    @patch('doc2md.converter.extract_pptx_to_markdown')
-    @patch('doc2md.converter.extract_docx_to_markdown')
+    @patch('doc2markdown.converter.extract_pdf_to_markdown')
+    @patch('doc2markdown.converter.extract_pptx_to_markdown')
+    @patch('doc2markdown.converter.extract_docx_to_markdown')
     def test_process_file_to_markdown(self, mock_docx, mock_pptx, mock_pdf):
         mock_pdf.return_value = "PDF content"
         mock_pptx.return_value = "PPTX content"
@@ -92,7 +92,7 @@ class TestConverter(unittest.TestCase):
                 process_file_to_markdown('test.txt', temp_dir)
             self.assertIn("Skipping unsupported file: test.txt", cm.output[0])
 
-    @patch('doc2md.converter.process_file_to_markdown')
+    @patch('doc2markdown.converter.process_file_to_markdown')
     def test_process_folder(self, mock_process_file):
         with tempfile.TemporaryDirectory() as temp_input_dir, \
              tempfile.TemporaryDirectory() as temp_output_dir:
@@ -110,7 +110,7 @@ class TestConverter(unittest.TestCase):
             mock_process_file.assert_any_call(os.path.join(temp_input_dir, 'subdir', 'test3.docx'), temp_output_dir)
             self.assertEqual(mock_process_file.call_count, 3)
 
-    @patch('doc2md.converter.extract_pptx_to_markdown')
+    @patch('doc2markdown.converter.extract_pptx_to_markdown')
     @patch('builtins.open', new_callable=mock_open, read_data="dummy data")
     def test_process_file_to_markdown(self, mock_file, mock_extract):
         mock_extract.return_value = "Mocked markdown content"

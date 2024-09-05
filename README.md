@@ -1,6 +1,6 @@
-# 📄 doc2md
+# 📄 doc2markdown
 
-`doc2md` is a Python command-line tool that converts various document formats (PDF, PPTX, DOCX) to Markdown. It processes files in a given directory and its subdirectories, maintaining the original folder structure in the output.
+`doc2markdown` is a Python command-line tool that converts various document formats (PDF, PPTX, DOCX) to Markdown. It processes files in a given directory and its subdirectories, maintaining the original folder structure in the output.
 
 ## ✨ Features
 
@@ -11,36 +11,36 @@
 
 ## ⚙️ Installation
 
-To install `doc2md`, run the following command:
+To install `doc2markdown`, run the following command:
 
 ```bash
-pip install doc2md
+pip install doc2markdown
 ```
 
-This will install `doc2md` along with its dependencies.
+This will install `doc2markdown` along with its dependencies.
 
 ## 🚀 Usage
 
 Basic usage:
 
 ```bash
-doc2md /path/to/input/file.pdf /path/to/output/folder 
+doc2markdown /path/to/input/file.pdf /path/to/output/folder 
 ```
 
 ```bash
-doc2md /path/to/input/folder /path/to/output/folder
+doc2markdown /path/to/input/folder /path/to/output/folder
 ```
 
 With verbose output:
 
 ```bash
-doc2md /path/to/input/folder /path/to/output/folder -v
+doc2markdown /path/to/input/folder /path/to/output/folder -v
 ```
 
 For help and more options:
 
 ```bash
-doc2md --help
+doc2markdown --help
 ```
 
 ## 🛠️ Requirements
@@ -50,11 +50,11 @@ doc2md --help
 - python-pptx
 - python-docx
 
-These dependencies will be automatically installed when you install `doc2md` using pip.
+These dependencies will be automatically installed when you install `doc2markdown` using pip.
 
 ## 🚀 Future Improvements
 
-We're constantly working to improve doc2md. Here are some features and enhancements we're considering for future releases:
+We're constantly working to improve doc2markdown. Here are some features and enhancements we're considering for future releases:
 
 ### TODO:
 
@@ -67,7 +67,7 @@ We're constantly working to improve doc2md. Here are some features and enhanceme
 - [ ] Add type hints throughout the codebase for improved readability and maintainability
 - [ ] Create a CONTRIBUTING.md file with guidelines for contributors
 
-We welcome contributions from the community to help implement these features and improve doc2md. If you're interested in working on any of these tasks, please check our issues page or submit a pull request.
+We welcome contributions from the community to help implement these features and improve doc2markdown. If you're interested in working on any of these tasks, please check our issues page or submit a pull request.
 
 ## 📝 Changelog
 
@@ -102,7 +102,7 @@ To bump the version of the project, use the `bump_version.py` script:
 2. Run the script with the following command:
 
    ```bash
-   python bump_version.py doc2md/__init__.py [major|minor|patch]
+   python bump_version.py doc2markdown/__init__.py [major|minor|patch]
    ```
 
    Replace `[major|minor|patch]` with the type of version bump you want to perform.
@@ -110,7 +110,7 @@ To bump the version of the project, use the `bump_version.py` script:
 3. Commit the changes:
 
    ```bash
-   git add doc2md/__init__.py
+   git add doc2markdown/__init__.py
    git commit -m "Bump version to x.y.z"
    ```
 
@@ -128,4 +128,3 @@ To bump the version of the project, use the `bump_version.py` script:
    ```
 
 This process will update the version number in the `__init__.py` file and create a new git tag for the release.
- 
