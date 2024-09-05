@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="doc2markdown",
-    version="0.1.0",
+    version="0.1.2",
     author="Your Name",
     author_email="me@adamscott.info",
     description="A tool to convert various document formats to Markdown",
@@ -17,6 +17,7 @@ setup(
         "PyPDF2",
         "python-pptx",
         "python-docx",
+        "pycryptodome"
     ],
     entry_points={
         "console_scripts": [

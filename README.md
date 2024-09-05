@@ -71,6 +71,10 @@ We welcome contributions from the community to help implement these features and
 
 ## 📝 Changelog
 
+### [0.1.2] 
+- Renamed to doc2markdown
+- Added support for encrypted PDFs
+
 ### [0.1.1] 
 - Added File as well as folder support
 - Improved the CLI messaging
