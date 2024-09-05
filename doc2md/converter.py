@@ -4,14 +4,18 @@ from docx import Document
 import re
 import os
 import argparse
+import logging
+from PyPDF2 import PdfReader 
+
+logging.basicConfig(level=logging.WARNING)
 
 def extract_pdf_to_markdown(file_path):
-    with open(file_path, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
-        markdown = f"# {os.path.basename(file_path)}\n\n"
-        for i, page in enumerate(reader.pages):
-            text = page.extract_text()
-            markdown += f"## Page {i+1}\n\n{text}\n\n"
+    # Make sure PdfReader is used in this function
+    reader = PdfReader(file_path)
+    markdown = f"# {os.path.basename(file_path)}\n\n"
+    for i, page in enumerate(reader.pages):
+        text = page.extract_text()
+        markdown += f"## Page {i+1}\n\n{text}\n\n"
     return markdown
 
 def extract_pptx_to_markdown(file_path):
@@ -29,16 +33,30 @@ def extract_docx_to_markdown(file_path):
     markdown = f"# {os.path.basename(file_path)}\n\n"
     for para in doc.paragraphs:
         if para.style.name.startswith('Heading'):
-            level = int(para.style.name[-1])
+            level = para.style.name.split()[-1]
+            level = int(level) if level.isdigit() else 1
             markdown += f"{'#' * level} {para.text}\n\n"
         else:
             markdown += f"{para.text}\n\n"
     return markdown
 
-def clean_markdown(markdown):
-    markdown = re.sub(r'\s+', ' ', markdown)
-    markdown = re.sub(r'\n\s*\n', '\n\n', markdown)
-    return markdown.strip()
+def clean_markdown(markdown_text):
+    # Normalize newlines
+    cleaned = re.sub(r'\r\n|\r', '\n', markdown_text)
+    
+    # Replace multiple newlines with double newlines
+    cleaned = re.sub(r'\n{3,}', '\n\n', cleaned)
+    
+    # Remove extra spaces within lines
+    cleaned = re.sub(r'[ \t]+', ' ', cleaned)
+    
+    # Remove leading/trailing whitespace from each line
+    cleaned = '\n'.join(line.strip() for line in cleaned.split('\n'))
+    
+    # Remove leading/trailing whitespace from the entire text
+    cleaned = cleaned.strip()
+    
+    return cleaned
 
 def process_file_to_markdown(file_path, output_dir):
     _, ext = os.path.splitext(file_path)
@@ -54,14 +72,14 @@ def process_file_to_markdown(file_path, output_dir):
 
     markdown = clean_markdown(markdown)
     
-    rel_path = os.path.relpath(file_path, start=args.input_dir)
+    rel_path = os.path.relpath(file_path, start=os.path.dirname(file_path))
     output_path = os.path.join(output_dir, os.path.splitext(rel_path)[0] + '.md')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(markdown)
     
-    print(f"Markdown file created: {output_path}")
+    logging.warning(f"Markdown file created: {output_path}")
 
 def process_folder(input_dir, output_dir):
     for root, _, files in os.walk(input_dir):

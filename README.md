@@ -24,6 +24,10 @@ This will install `doc2md` along with its dependencies.
 Basic usage:
 
 ```bash
+doc2md /path/to/input/file.pdf /path/to/output/folder 
+```
+
+```bash
 doc2md /path/to/input/folder /path/to/output/folder
 ```
 
